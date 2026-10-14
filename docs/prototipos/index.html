@@ -1,511 +1,205 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8">
-  <title>VetCare — Protótipos de tela</title>
-  <style>
-    :root {
-      --bg: #e8eef4;
-      --panel: #f7f9fb;
-      --ink: #1c2b36;
-      --muted: #5d6d7a;
-      --line: #c5d0da;
-      --accent: #1f6f8b;
-      --ok: #2e7d4f;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      background: #dfe6ee;
-      color: var(--ink);
-    }
-
-    header {
-      background: #16384a;
-      color: #fff;
-      padding: 18px 28px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 22px;
-    }
-
-    header p {
-      margin: 6px 0 0;
-      color: #c9dbe6;
-      font-size: 14px;
-    }
-
-    nav {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      padding: 14px 28px;
-      background: #fff;
-      border-bottom: 1px solid var(--line);
-      position: sticky;
-      top: 0;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--accent);
-      border: 1px solid var(--line);
-      padding: 6px 10px;
-      border-radius: 6px;
-      font-size: 13px;
-      background: #f4f8fb;
-    }
-
-    main {
-      padding: 22px 28px 48px;
-      display: grid;
-      gap: 28px;
-    }
-
-    section {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    section h2 {
-      margin: 0;
-      padding: 12px 16px;
-      background: #eef4f8;
-      font-size: 16px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .note {
-      padding: 10px 16px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .win {
-      margin: 16px;
-      border: 1px solid #9aafbf;
-      border-radius: 6px;
-      background: var(--panel);
-      box-shadow: 0 8px 18px rgba(22, 56, 74, .08);
-    }
-
-    .titlebar {
-      background: linear-gradient(#2a6078, #1f4e64);
-      color: #fff;
-      padding: 8px 12px;
-      font-size: 13px;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .body {
-      padding: 14px;
-    }
-
-    label {
-      display: block;
-      font-size: 12px;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      border: 1px solid #b7c6d2;
-      border-radius: 4px;
-      padding: 7px 8px;
-      font: inherit;
-      background: #fff;
-    }
-
-    .row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-
-    .row.two {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 13px;
-      background: #fff;
-    }
-
-    th,
-    td {
-      border-bottom: 1px solid #e3ebf1;
-      text-align: left;
-      padding: 8px;
-    }
-
-    th {
-      background: #edf3f7;
-      color: #355062;
-      font-weight: 600;
-    }
-
-    .btns {
-      display: flex;
-      gap: 8px;
-      margin-top: 12px;
-    }
-
-    button {
-      border: 0;
-      border-radius: 4px;
-      padding: 8px 12px;
-      font: inherit;
-      cursor: default;
-    }
-
-    .primary {
-      background: var(--accent);
-      color: #fff;
-    }
-
-    .ghost {
-      background: #e7eef3;
-      color: #234;
-    }
-
-    .danger {
-      background: #f3d6d6;
-      color: #8a2b2b;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-    }
-
-    .card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 12px;
-    }
-
-    .card b {
-      display: block;
-      font-size: 22px;
-      color: #16384a;
-    }
-
-    .card span {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .side {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      min-height: 280px;
-    }
-
-    .menu {
-      background: #16384a;
-      color: #d7e6ef;
-      padding: 12px;
-      font-size: 13px;
-    }
-
-    .menu div {
-      padding: 8px 6px;
-      border-radius: 4px;
-    }
-
-    .menu .on {
-      background: #1f6f8b;
-      color: #fff;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>VetCare — Protótipos de tela</title>
+<style>
+  :root { --bg:#e8eef4; --panel:#f7f9fb; --ink:#1c2b36; --muted:#5d6d7a; --line:#c5d0da; --accent:#1f6f8b; --ok:#2e7d4f; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: "Segoe UI", sans-serif; background:#dfe6ee; color:var(--ink); }
+  header { background:#16384a; color:#fff; padding:18px 28px; }
+  header h1 { margin:0; font-size:22px; }
+  header p { margin:6px 0 0; color:#c9dbe6; font-size:14px; }
+  nav { display:flex; gap:8px; flex-wrap:wrap; padding:14px 28px; background:#fff; border-bottom:1px solid var(--line); position:sticky; top:0; }
+  nav a { text-decoration:none; color:var(--accent); border:1px solid var(--line); padding:6px 10px; border-radius:6px; font-size:13px; background:#f4f8fb; }
+  main { padding:22px 28px 48px; display:grid; gap:28px; }
+  section { background:#fff; border:1px solid var(--line); border-radius:10px; overflow:hidden; }
+  section h2 { margin:0; padding:12px 16px; background:#eef4f8; font-size:16px; border-bottom:1px solid var(--line); }
+  .note { padding:10px 16px; color:var(--muted); font-size:13px; }
+  .win { margin:16px; border:1px solid #9aafbf; border-radius:6px; background:var(--panel); box-shadow:0 8px 18px rgba(22,56,74,.08); }
+  .titlebar { background:linear-gradient(#2a6078,#1f4e64); color:#fff; padding:8px 12px; font-size:13px; display:flex; justify-content:space-between; }
+  .body { padding:14px; }
+  label { display:block; font-size:12px; color:var(--muted); margin-bottom:4px; }
+  input, select, textarea { width:100%; border:1px solid #b7c6d2; border-radius:4px; padding:7px 8px; font:inherit; background:#fff; }
+  .row { display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; margin-bottom:10px; }
+  .row.two { grid-template-columns: 1fr 1fr; }
+  table { width:100%; border-collapse:collapse; font-size:13px; background:#fff; }
+  th, td { border-bottom:1px solid #e3ebf1; text-align:left; padding:8px; }
+  th { background:#edf3f7; color:#355062; font-weight:600; }
+  .btns { display:flex; gap:8px; margin-top:12px; }
+  button { border:0; border-radius:4px; padding:8px 12px; font:inherit; cursor:default; }
+  .primary { background:var(--accent); color:#fff; }
+  .ghost { background:#e7eef3; color:#234; }
+  .danger { background:#f3d6d6; color:#8a2b2b; }
+  .cards { display:grid; grid-template-columns: repeat(4, 1fr); gap:10px; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:8px; padding:12px; }
+  .card b { display:block; font-size:22px; color:#16384a; }
+  .card span { color:var(--muted); font-size:12px; }
+  .side { display:grid; grid-template-columns: 180px 1fr; min-height:280px; }
+  .menu { background:#16384a; color:#d7e6ef; padding:12px; font-size:13px; }
+  .menu div { padding:8px 6px; border-radius:4px; }
+  .menu .on { background:#1f6f8b; color:#fff; }
+</style>
 </head>
-
 <body>
-  <header>
-    <h1>VetCare — Protótipos de tela (Java Swing)</h1>
-    <p>Clínica veterinária · 1ª etapa · telas de referência para a view do MVC</p>
-  </header>
-  <nav>
-    <a href="#login">Login</a>
-    <a href="#home">Painel</a>
-    <a href="#clientes">Clientes</a>
-    <a href="#animais">Animais</a>
-    <a href="#vets">Veterinários</a>
-    <a href="#consultas">Consultas</a>
-    <a href="#procedimentos">Procedimentos</a>
-  </nav>
-  <main>
-    <section id="login">
-      <h2>1. Login</h2>
-      <p class="note">Tela inicial. Autenticação simples de recepcionista/administrador antes de abrir o menu principal.
-      </p>
-      <div class="win" style="max-width:420px;margin:16px auto 24px;">
-        <div class="titlebar"><span>VetCare — Acesso</span><span>_ □ ×</span></div>
-        <div class="body">
-          <label>Usuário</label><input value="recepcao">
-          <div style="height:8px"></div>
-          <label>Senha</label><input type="password" value="******">
-          <div class="btns"><button class="primary">Entrar</button><button class="ghost">Sair</button></div>
-        </div>
+<header>
+  <h1>VetCare — Protótipos de tela (Java Swing)</h1>
+  <p>Clínica veterinária · 1ª etapa · telas de referência para a view do MVC</p>
+</header>
+<nav>
+  <a href="#login">Login</a>
+  <a href="#home">Painel</a>
+  <a href="#clientes">Clientes</a>
+  <a href="#animais">Animais</a>
+  <a href="#vets">Veterinários</a>
+  <a href="#consultas">Consultas</a>
+  <a href="#procedimentos">Procedimentos</a>
+</nav>
+<main>
+  <section id="login">
+    <h2>1. Login</h2>
+    <p class="note">Tela inicial. Autenticação simples de recepcionista/administrador antes de abrir o menu principal.</p>
+    <div class="win" style="max-width:420px;margin:16px auto 24px;">
+      <div class="titlebar"><span>VetCare — Acesso</span><span>_ □ ×</span></div>
+      <div class="body">
+        <label>Usuário</label><input value="recepcao">
+        <div style="height:8px"></div>
+        <label>Senha</label><input type="password" value="******">
+        <div class="btns"><button class="primary">Entrar</button><button class="ghost">Sair</button></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="home">
-      <h2>2. Painel principal</h2>
-      <p class="note">Janela principal com menu lateral e indicadores do dia.</p>
-      <div class="win">
-        <div class="titlebar"><span>VetCare — Painel</span><span>_ □ ×</span></div>
-        <div class="side">
-          <div class="menu">
-            <div class="on">Painel</div>
-            <div>Clientes</div>
-            <div>Animais</div>
-            <div>Veterinários</div>
-            <div>Consultas</div>
-            <div>Procedimentos</div>
-          </div>
-          <div class="body">
-            <div class="cards">
-              <div class="card"><b>18</b><span>consultas hoje</span></div>
-              <div class="card"><b>6</b><span>aguardando</span></div>
-              <div class="card"><b>142</b><span>animais ativos</span></div>
-              <div class="card"><b>R$ 2.480</b><span>faturado no dia</span></div>
-            </div>
-          </div>
+  <section id="home">
+    <h2>2. Painel principal</h2>
+    <p class="note">Janela principal com menu lateral e indicadores do dia.</p>
+    <div class="win">
+      <div class="titlebar"><span>VetCare — Painel</span><span>_ □ ×</span></div>
+      <div class="side">
+        <div class="menu">
+          <div class="on">Painel</div><div>Clientes</div><div>Animais</div><div>Veterinários</div><div>Consultas</div><div>Procedimentos</div>
         </div>
-      </div>
-    </section>
-
-    <section id="clientes">
-      <h2>3. Clientes</h2>
-      <p class="note">Listagem com busca e formulário de inclusão/edição. Um cliente possui vários animais.</p>
-      <div class="win">
-        <div class="titlebar"><span>VetCare — Clientes</span><span>_ □ ×</span></div>
         <div class="body">
-          <div class="row two">
-            <div><label>Buscar por nome ou CPF</label><input placeholder="Ex.: Ana Souza"></div>
-            <div><label>Status</label><select>
-                <option>Ativos</option>
-                <option>Inativos</option>
-              </select></div>
+          <div class="cards">
+            <div class="card"><b>18</b><span>consultas hoje</span></div>
+            <div class="card"><b>6</b><span>aguardando</span></div>
+            <div class="card"><b>142</b><span>animais ativos</span></div>
+            <div class="card"><b>R$ 2.480</b><span>faturado no dia</span></div>
           </div>
-          <table>
-            <tr>
-              <th>Nome</th>
-              <th>CPF</th>
-              <th>Telefone</th>
-              <th>E-mail</th>
-              <th>Animais</th>
-            </tr>
-            <tr>
-              <td>Ana Souza</td>
-              <td>123.456.789-00</td>
-              <td>(47) 99911-2200</td>
-              <td>ana@email.com</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>Carlos Lima</td>
-              <td>987.654.321-00</td>
-              <td>(47) 98820-1100</td>
-              <td>carlos@email.com</td>
-              <td>1</td>
-            </tr>
-          </table>
-          <div class="btns"><button class="primary">Novo</button><button class="ghost">Editar</button><button
-              class="danger">Inativar</button></div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="animais">
-      <h2>4. Animais</h2>
-      <p class="note">Cadastro vinculado ao tutor. Espécie, raça, sexo e peso alimentam a ficha clínica.</p>
-      <div class="win">
-        <div class="titlebar"><span>VetCare — Animais</span><span>_ □ ×</span></div>
-        <div class="body">
-          <div class="row">
-            <div><label>Nome</label><input value="Thor"></div>
-            <div><label>Tutor</label><select>
-                <option>Ana Souza</option>
-              </select></div>
-            <div><label>Espécie</label><select>
-                <option>Cão</option>
-                <option>Gato</option>
-              </select></div>
-          </div>
-          <div class="row">
-            <div><label>Raça</label><input value="Labrador"></div>
-            <div><label>Sexo</label><select>
-                <option>Macho</option>
-                <option>Fêmea</option>
-              </select></div>
-            <div><label>Peso (kg)</label><input value="28.4"></div>
-          </div>
-          <table>
-            <tr>
-              <th>Animal</th>
-              <th>Espécie</th>
-              <th>Tutor</th>
-              <th>Sexo</th>
-            </tr>
-            <tr>
-              <td>Thor</td>
-              <td>Cão</td>
-              <td>Ana Souza</td>
-              <td>M</td>
-            </tr>
-            <tr>
-              <td>Luna</td>
-              <td>Gato</td>
-              <td>Ana Souza</td>
-              <td>F</td>
-            </tr>
-          </table>
-          <div class="btns"><button class="primary">Salvar</button><button class="ghost">Limpar</button></div>
+  <section id="clientes">
+    <h2>3. Clientes</h2>
+    <p class="note">Listagem com busca e formulário de inclusão/edição. Um cliente possui vários animais.</p>
+    <div class="win">
+      <div class="titlebar"><span>VetCare — Clientes</span><span>_ □ ×</span></div>
+      <div class="body">
+        <div class="row two">
+          <div><label>Buscar por nome ou CPF</label><input placeholder="Ex.: Ana Souza"></div>
+          <div><label>Status</label><select><option>Ativos</option><option>Inativos</option></select></div>
         </div>
+        <table>
+          <tr><th>Nome</th><th>CPF</th><th>Telefone</th><th>E-mail</th><th>Animais</th></tr>
+          <tr><td>Ana Souza</td><td>123.456.789-00</td><td>(47) 99911-2200</td><td>ana@email.com</td><td>2</td></tr>
+          <tr><td>Carlos Lima</td><td>987.654.321-00</td><td>(47) 98820-1100</td><td>carlos@email.com</td><td>1</td></tr>
+        </table>
+        <div class="btns"><button class="primary">Novo</button><button class="ghost">Editar</button><button class="danger">Inativar</button></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="vets">
-      <h2>5. Veterinários</h2>
-      <p class="note">Cadastro dos profissionais. CRMV único. Especialidade usada no agendamento.</p>
-      <div class="win">
-        <div class="titlebar"><span>VetCare — Veterinários</span><span>_ □ ×</span></div>
-        <div class="body">
-          <table>
-            <tr>
-              <th>Nome</th>
-              <th>CRMV</th>
-              <th>Especialidade</th>
-              <th>Telefone</th>
-            </tr>
-            <tr>
-              <td>Dra. Marina Alves</td>
-              <td>SC-12345</td>
-              <td>Clínica geral</td>
-              <td>(47) 98800-1001</td>
-            </tr>
-            <tr>
-              <td>Dr. Paulo Neri</td>
-              <td>SC-22910</td>
-              <td>Cirurgia</td>
-              <td>(47) 98800-1002</td>
-            </tr>
-          </table>
-          <div class="btns"><button class="primary">Novo veterinário</button><button class="ghost">Editar</button></div>
+  <section id="animais">
+    <h2>4. Animais</h2>
+    <p class="note">Cadastro vinculado ao tutor. Espécie, raça, sexo e peso alimentam a ficha clínica.</p>
+    <div class="win">
+      <div class="titlebar"><span>VetCare — Animais</span><span>_ □ ×</span></div>
+      <div class="body">
+        <div class="row">
+          <div><label>Nome</label><input value="Thor"></div>
+          <div><label>Tutor</label><select><option>Ana Souza</option></select></div>
+          <div><label>Espécie</label><select><option>Cão</option><option>Gato</option></select></div>
         </div>
+        <div class="row">
+          <div><label>Raça</label><input value="Labrador"></div>
+          <div><label>Sexo</label><select><option>Macho</option><option>Fêmea</option></select></div>
+          <div><label>Peso (kg)</label><input value="28.4"></div>
+        </div>
+        <table>
+          <tr><th>Animal</th><th>Espécie</th><th>Tutor</th><th>Sexo</th></tr>
+          <tr><td>Thor</td><td>Cão</td><td>Ana Souza</td><td>M</td></tr>
+          <tr><td>Luna</td><td>Gato</td><td>Ana Souza</td><td>F</td></tr>
+        </table>
+        <div class="btns"><button class="primary">Salvar</button><button class="ghost">Limpar</button></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="consultas">
-      <h2>6. Consultas</h2>
-      <p class="note">Agenda o atendimento, associa animal e veterinário e lança procedimentos (itens).</p>
-      <div class="win">
-        <div class="titlebar"><span>VetCare — Consultas</span><span>_ □ ×</span></div>
-        <div class="body">
-          <div class="row">
-            <div><label>Animal</label><select>
-                <option>Thor — Ana Souza</option>
-              </select></div>
-            <div><label>Veterinário</label><select>
-                <option>Dra. Marina Alves</option>
-              </select></div>
-            <div><label>Data e hora</label><input value="06/10/2026 14:30"></div>
-          </div>
-          <div class="row two">
-            <div><label>Motivo</label><input value="Check-up e vacina"></div>
-            <div><label>Status</label><select>
-                <option>Agendada</option>
-                <option>Em atendimento</option>
-                <option>Concluída</option>
-                <option>Cancelada</option>
-              </select></div>
-          </div>
-          <label>Itens da consulta</label>
-          <table>
-            <tr>
-              <th>Procedimento</th>
-              <th>Qtd</th>
-              <th>Valor unit.</th>
-              <th>Subtotal</th>
-            </tr>
-            <tr>
-              <td>Consulta clínica</td>
-              <td>1</td>
-              <td>R$ 120,00</td>
-              <td>R$ 120,00</td>
-            </tr>
-            <tr>
-              <td>Vacina V10</td>
-              <td>1</td>
-              <td>R$ 90,00</td>
-              <td>R$ 90,00</td>
-            </tr>
-          </table>
-          <div class="btns"><button class="primary">Salvar consulta</button><button class="ghost">Adicionar
-              item</button><button class="danger">Cancelar</button></div>
-        </div>
+  <section id="vets">
+    <h2>5. Veterinários</h2>
+    <p class="note">Cadastro dos profissionais. CRMV único. Especialidade usada no agendamento.</p>
+    <div class="win">
+      <div class="titlebar"><span>VetCare — Veterinários</span><span>_ □ ×</span></div>
+      <div class="body">
+        <table>
+          <tr><th>Nome</th><th>CRMV</th><th>Especialidade</th><th>Telefone</th></tr>
+          <tr><td>Dra. Marina Alves</td><td>SC-12345</td><td>Clínica geral</td><td>(47) 98800-1001</td></tr>
+          <tr><td>Dr. Paulo Neri</td><td>SC-22910</td><td>Cirurgia</td><td>(47) 98800-1002</td></tr>
+        </table>
+        <div class="btns"><button class="primary">Novo veterinário</button><button class="ghost">Editar</button></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="procedimentos">
-      <h2>7. Procedimentos</h2>
-      <p class="note">Catálogo de serviços com preço. Usado como item da consulta.</p>
-      <div class="win">
-        <div class="titlebar"><span>VetCare — Procedimentos</span><span>_ □ ×</span></div>
-        <div class="body">
-          <div class="row">
-            <div><label>Nome</label><input value="Vacina V10"></div>
-            <div><label>Valor</label><input value="90.00"></div>
-            <div><label>Descrição</label><input value="Imunização polivalente"></div>
-          </div>
-          <table>
-            <tr>
-              <th>Procedimento</th>
-              <th>Descrição</th>
-              <th>Valor</th>
-            </tr>
-            <tr>
-              <td>Consulta clínica</td>
-              <td>Avaliação geral</td>
-              <td>R$ 120,00</td>
-            </tr>
-            <tr>
-              <td>Vacina V10</td>
-              <td>Imunização polivalente</td>
-              <td>R$ 90,00</td>
-            </tr>
-            <tr>
-              <td>Hemograma</td>
-              <td>Exame laboratorial</td>
-              <td>R$ 75,00</td>
-            </tr>
-          </table>
-          <div class="btns"><button class="primary">Salvar</button><button class="ghost">Limpar</button></div>
+  <section id="consultas">
+    <h2>6. Consultas</h2>
+    <p class="note">Agenda o atendimento, associa animal e veterinário e lança procedimentos (itens).</p>
+    <div class="win">
+      <div class="titlebar"><span>VetCare — Consultas</span><span>_ □ ×</span></div>
+      <div class="body">
+        <div class="row">
+          <div><label>Animal</label><select><option>Thor — Ana Souza</option></select></div>
+          <div><label>Veterinário</label><select><option>Dra. Marina Alves</option></select></div>
+          <div><label>Data e hora</label><input value="06/10/2026 14:30"></div>
         </div>
+        <div class="row two">
+          <div><label>Motivo</label><input value="Check-up e vacina"></div>
+          <div><label>Status</label><select><option>Agendada</option><option>Em atendimento</option><option>Concluída</option><option>Cancelada</option></select></div>
+        </div>
+        <label>Itens da consulta</label>
+        <table>
+          <tr><th>Procedimento</th><th>Qtd</th><th>Valor unit.</th><th>Subtotal</th></tr>
+          <tr><td>Consulta clínica</td><td>1</td><td>R$ 120,00</td><td>R$ 120,00</td></tr>
+          <tr><td>Vacina V10</td><td>1</td><td>R$ 90,00</td><td>R$ 90,00</td></tr>
+        </table>
+        <div class="btns"><button class="primary">Salvar consulta</button><button class="ghost">Adicionar item</button><button class="danger">Cancelar</button></div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <section id="procedimentos">
+    <h2>7. Procedimentos</h2>
+    <p class="note">Catálogo de serviços com preço. Usado como item da consulta.</p>
+    <div class="win">
+      <div class="titlebar"><span>VetCare — Procedimentos</span><span>_ □ ×</span></div>
+      <div class="body">
+        <div class="row">
+          <div><label>Nome</label><input value="Vacina V10"></div>
+          <div><label>Valor</label><input value="90.00"></div>
+          <div><label>Descrição</label><input value="Imunização polivalente"></div>
+        </div>
+        <table>
+          <tr><th>Procedimento</th><th>Descrição</th><th>Valor</th></tr>
+          <tr><td>Consulta clínica</td><td>Avaliação geral</td><td>R$ 120,00</td></tr>
+          <tr><td>Vacina V10</td><td>Imunização polivalente</td><td>R$ 90,00</td></tr>
+          <tr><td>Hemograma</td><td>Exame laboratorial</td><td>R$ 75,00</td></tr>
+        </table>
+        <div class="btns"><button class="primary">Salvar</button><button class="ghost">Limpar</button></div>
+      </div>
+    </div>
+  </section>
+</main>
 </body>
-
 </html>
